@@ -23,7 +23,7 @@ const Exchanges = () => {
         <Col span={6}>Markets</Col>
         <Col span={6}>Change</Col>
       </Row>
-      <Row>
+      <Row>{/*
         {exchangesList.map((exchange) => (
           <Col span={24}>
             
@@ -49,6 +49,7 @@ const Exchanges = () => {
             </Collapse>
           </Col>
         ))}
+                */}
       </Row>
     </>
   );
