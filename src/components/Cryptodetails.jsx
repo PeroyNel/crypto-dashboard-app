@@ -18,6 +18,7 @@ const CryptoDetails = () => {
   const { data, isFetching } = useGetCryptoDetailsQuery(coinId);
   const { data: coinHistory } = useGetCryptoHistoryQuery({ coinId, timeperiod });
   const cryptoDetails = data?.data?.coin;
+  console.log(cryptoDetails);
   
   if (isFetching) return <Loader />;
   //const cryptoDetails1 = data?.data?.coins;
@@ -29,7 +30,7 @@ const CryptoDetails = () => {
   
   
 
-  console.log(cryptoDetails);
+  
 
   
 
@@ -47,7 +48,7 @@ const CryptoDetails = () => {
     { title: 'Number Of Markets', value: cryptoDetails?.numberOfMarkets, icon: <FundOutlined /> },
     { title: 'Number Of Exchanges', value: cryptoDetails?.numberOfExchanges, icon: <MoneyCollectOutlined /> },
     { title: 'Aprroved Supply', value: cryptoDetails?.supply.confirmed ? <CheckOutlined /> : <StopOutlined />, icon: <ExclamationCircleOutlined /> },
-    { title: 'Total Supply', value: `$ ${cryptoDetails?.supply.total}`, icon: <ExclamationCircleOutlined /> },
+    { title: 'Total Supply', value: `$ ${cryptoDetails.supply.total}`, icon: <ExclamationCircleOutlined /> },
     { title: 'Circulating Supply', value: `$ ${cryptoDetails?.supply.circulating}`, icon: <ExclamationCircleOutlined /> },
   ];
 
@@ -55,7 +56,7 @@ const CryptoDetails = () => {
     <Col className="coin-detail-container">
       <Col className="coin-heading-container">
         <Title level={2} className="coin-name">
-          {cryptoDetails.name} ({cryptoDetails.slug}) Price
+          {cryptoDetails.name} ({cryptoDetails.symbol}) Price
         </Title>
         <p>{cryptoDetails.name} live price in US Dollar (USD). View value statistics, market cap and supply.</p>
       </Col>
