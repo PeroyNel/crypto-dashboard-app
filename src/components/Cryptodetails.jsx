@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import HTMLReactParser from 'html-react-parser';
 import { useParams } from 'react-router-dom';
-//import millify from 'millify';
+import millify from 'millify';
 import { Col, Row, Typography, Select } from 'antd';
 import { MoneyCollectOutlined, DollarCircleOutlined, FundOutlined, ExclamationCircleOutlined, StopOutlined, TrophyOutlined, CheckOutlined, NumberOutlined, ThunderboltOutlined } from '@ant-design/icons';
 
@@ -18,6 +18,14 @@ const CryptoDetails = () => {
   const { data, isFetching } = useGetCryptoDetailsQuery(coinId);
   const { data: coinHistory } = useGetCryptoHistoryQuery({ coinId, timeperiod });
   const cryptoDetails = data?.data?.coin;
+  //const cryptoDetails1 = data?.data?.coins;
+
+  //const vol = cryptoDetails1.get("24hValue");
+
+  
+
+  
+  
 
   console.log(cryptoDetails);
 
